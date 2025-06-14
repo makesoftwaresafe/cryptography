@@ -40,12 +40,12 @@ jobs:
           - {VERSION: "3.13", NOXSESSION: "tests-ssh", OPENSSL: {TYPE: "openssl", VERSION: "3.5.0"}}
           - {VERSION: "3.13", NOXSESSION: "rust,tests", OPENSSL: {TYPE: "libressl", VERSION: "4.0.0"}}
           - {VERSION: "3.13", NOXSESSION: "rust,tests", OPENSSL: {TYPE: "libressl", VERSION: "4.1.0"}}
-          # Latest commit on the BoringSSL main branch, as of Jun 03, 2025.
-          - {VERSION: "3.13", NOXSESSION: "rust,tests", OPENSSL: {TYPE: "boringssl", VERSION: "035e720641f385e82c72b7b0a9e1d89e58cb5ed5"}}
-          # Latest tag of AWS-LC main branch, as of May 30, 2025.
-          - {VERSION: "3.13", NOXSESSION: "rust,tests", OPENSSL: {TYPE: "aws-lc", VERSION: "v1.52.1"}}
-          # Latest commit on the OpenSSL master branch, as of Jun 04, 2025.
-          - {VERSION: "3.13", NOXSESSION: "tests", OPENSSL: {TYPE: "openssl", VERSION: "9bad2b86e892b70ea65e87c409ae90f625d3c12c"}}
+          # Latest commit on the BoringSSL main branch, as of Jun 06, 2025.
+          - {VERSION: "3.13", NOXSESSION: "rust,tests", OPENSSL: {TYPE: "boringssl", VERSION: "5622da92e1e7bacb5d0785ff5650a5a23b143b84"}}
+          # Latest tag of AWS-LC main branch, as of Jun 14, 2025.
+          - {VERSION: "3.13", NOXSESSION: "rust,tests", OPENSSL: {TYPE: "aws-lc", VERSION: "v1.53.0"}}
+          # Latest commit on the OpenSSL master branch, as of Jun 14, 2025.
+          - {VERSION: "3.13", NOXSESSION: "tests", OPENSSL: {TYPE: "openssl", VERSION: "52dba1c098d9b0388afa4db2fbe3461df67461c6"}}
           # Builds with various Rust versions. Includes MSRV and next
           # potential future MSRV.
           # - 1.77: offset_of! in std (for pyo3), c"str" literals (replace cstr_from_literal)
@@ -349,7 +349,7 @@ jobs:
           - {ARCH: 'x64', WINDOWS: 'win64'}
         PYTHON:
           - {VERSION: "3.8", NOXSESSION: "tests-nocoverage"}
-          - {VERSION: "3.13", NOXSESSION: "tests"}
+          - {VERSION: "3.13.3", NOXSESSION: "tests"}
     timeout-minutes: 15
     steps:
       - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
